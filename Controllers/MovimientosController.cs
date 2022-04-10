@@ -40,20 +40,6 @@ namespace ntt.data.test.luis.pita.Controllers
             return View(lstMovimiento);
         }
 
-        [HttpGet("Select")]
-        public IActionResult Select(int id)
-        {
-            try
-            {
-                MovimientoModel movReturn = _movimientoRepo.GetItem(id);
-                return Ok(movReturn);
-            }
-            catch (Exception ex)
-            {
-                return Ok(new ResponseModel() { ErrorId = 1, ErrorMensaje = ex.Message });
-            }
-        }
-
         [HttpGet("SelectAll")]
         public IActionResult SelectAll()
         {
@@ -164,6 +150,27 @@ namespace ntt.data.test.luis.pita.Controllers
                 response.ErrorId = 0;
                 response.ErrorMensaje = "El movimiento se registró correctamente.";
                 response.root.Add(movimiento);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new ResponseModel() { ErrorId = 1, ErrorMensaje = ex.Message });
+            }
+        }
+
+        [HttpPost("Reporte")]
+        public IActionResult Reporte(ReporteModel reporte)
+        {
+            try
+            {
+                ResponseModel response = new ResponseModel();
+                IEnumerable<MovimientoModel> movimientos = _movimientoRepo.GetItemReporte(reporte);
+
+
+                response.ErrorId = 0;
+                response.ErrorMensaje = "Generación de reporte.";
+                response.root.Add(movimientos);
 
                 return Ok(response);
             }

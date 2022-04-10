@@ -27,9 +27,14 @@ namespace ntt.data.test.luis.pita.Repository
             return returnMov;
         }
 
-        public MovimientoModel GetItem(int id)
+        public IEnumerable<MovimientoModel> GetItemReporte(ReporteModel reporte)
         {
-            MovimientoModel movimiento = _context.tbMovimiento.Include(p => p.Cuenta).Include(p => p.Cuenta.TipoCuenta).Include(p => p.Cuenta.Cliente).Include(p => p.Cuenta.Cliente.Persona).Where(u => u.Id == id).FirstOrDefault();
+            IEnumerable<MovimientoModel> movimiento = _context.tbMovimiento
+                .Include(p => p.Cuenta)
+                .Include(p => p.Cuenta.TipoCuenta)
+                .Include(p => p.Cuenta.Cliente)
+                .Include(p => p.Cuenta.Cliente.Persona)
+                .Where(u => u.Cuenta.ClienteId == reporte.idCliente && (u.Fecha.Date >= reporte.fechaInicio.Date && u.Fecha.Date <= reporte.fechaFin.Date));
             return movimiento;
         }
 

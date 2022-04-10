@@ -9,7 +9,7 @@ namespace ntt.data.test.luis.pita.Interfaces
     public interface IMovimiento
     {
         IEnumerable<MovimientoModel> GetItems();
-        MovimientoModel GetItem(int id);
+        IEnumerable<MovimientoModel> GetItemReporte(ReporteModel reporte);
         MovimientoModel Create(MovimientoModel cuenta);
         MovimientoModel Edit(MovimientoModel cuenta);
         MovimientoModel Delete(MovimientoModel cuenta); 
