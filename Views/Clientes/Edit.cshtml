@@ -1,0 +1,85 @@
+﻿@model ntt.data.test.luis.pita.Models.ClienteModel
+
+@{
+    ViewData["Title"] = "Editar cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Editar cliente</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form method="post" asp-action="EditView">
+
+                <input type="hidden" asp-for="Id" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Nombre" class="control-label"></label>
+                    <input asp-for="Persona.Nombre" class="form-control" />
+                    <span asp-validation-for="Persona.Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Genero" class="control-label"></label>
+                    <select asp-for="Persona.Genero" class="form-control" asp-items="ViewBag.Generos"></select>
+                    <span asp-validation-for="Persona.Genero" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Edad" class="control-label"></label>
+                    <input asp-for="Persona.Edad" class="form-control" />
+                    <span asp-validation-for="Persona.Edad" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Identificacion" class="control-label"></label>
+                    <input asp-for="Persona.Identificacion" class="form-control" />
+                    <span asp-validation-for="Persona.Identificacion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Direccion" class="control-label"></label>
+                    <input asp-for="Persona.Direccion" class="form-control" />
+                    <span asp-validation-for="Persona.Direccion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persona.Telefono" class="control-label"></label>
+                    <input asp-for="Persona.Telefono" class="form-control" />
+                    <span asp-validation-for="Persona.Telefono" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Contrasenia" class="control-label"></label>
+                    <input asp-for="Contrasenia" class="form-control" type="password"/>
+                    <span asp-validation-for="Contrasenia" class="text-danger"></span>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
