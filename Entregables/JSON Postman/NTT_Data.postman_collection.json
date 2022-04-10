@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "dad4c8ee-67df-4ec9-9fd0-149e9272a3a3",
+		"name": "NTT_Data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Clientes por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Clientes/Select?clienteId=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Clientes",
+						"Select"
+					],
+					"query": [
+						{
+							"key": "clienteId",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Clientes All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Clientes/SelectAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Clientes",
+						"SelectAll"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Persona\": {\r\n        \"Nombre\": \"Luis Pita\",\r\n        \"Genero\": \"M\",\r\n        \"Edad\": 30,\r\n        \"Identificacion\": \"2312312312\",\r\n        \"Direccion\": \"Isla Trinitaria\",\r\n        \"Telefono\": \"0982617189\"\r\n    },\r\n    \"Contrasenia\": \"1234\",\r\n    \"Estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Clientes/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Clientes",
+						"Create"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 15,\r\n    \"PersonaId\": 0,\r\n    \"Persona\": {\r\n        \"Id\": 0,\r\n        \"Nombre\": \"Luis Pita\",\r\n        \"Genero\": \"F\",\r\n        \"Edad\": 30,\r\n        \"Identificacion\": \"0909090909\",\r\n        \"Direccion\": \"Etapa Galaxia\",\r\n        \"Telefono\": \"0980980980\"\r\n    },\r\n    \"Contrasenia\": \"1234\",\r\n    \"Estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Clientes/Edit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Clientes",
+						"Edit"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "a",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Clientes/Delete?id=15",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Clientes",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "a",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "15"
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Cuentas por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Cuentas/Select?cuentaId=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Cuentas",
+						"Select"
+					],
+					"query": [
+						{
+							"key": "cuentaId",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Cuentas All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Cuentas/SelectAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Cuentas",
+						"SelectAll"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Numero\": \"222222222\",\r\n    \"TipoCuentaId\": 1,\r\n    \"ClienteId\": 14,\r\n    \"Saldo\": 120.00,\r\n    \"Estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Cuentas/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Cuentas",
+						"Create"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 7,\r\n    \"Numero\": \"333333\",\r\n    \"TipoCuentaId\": 1,\r\n    \"ClienteId\": 14,\r\n    \"Saldo\": 120.00,\r\n    \"Estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Cuentas/Edit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Cuentas",
+						"Edit"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "a",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cuenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44361/Cuentas/Delete?id=7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Cuentas",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Movimiento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"TipoMovimiento\": \"C\",\r\n    \"CuentaId\": 10,\r\n    \"Valor\": 120.24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Movimientos/CreateApi",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Movimientos",
+						"CreateApi"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Reporte Movimiento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\" : 1,\r\n    \"fechaInicio\": \"2022-01-31\",\r\n    \"fechafin\": \"2022-12-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44361/Movimientos/Reporte",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44361",
+					"path": [
+						"Movimientos",
+						"Reporte"
+					]
+				},
+				"description": "Read de cuenta por Id"
+			},
+			"response": []
+		}
+	]
+}
